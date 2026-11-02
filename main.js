@@ -60,8 +60,24 @@
     const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
     let closing = 0;
 
+    /* Visitor's country as a two-letter code, from Cloudflare's trace endpoint on the webhook's own domain.
+       Looked up once, when the form first opens, so it's ready by the time they press send. */
+    let countryLookup = null;
+    const lookupCountry = () => {
+      if (countryLookup || !form.dataset.endpoint) return countryLookup;
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 2500);
+      countryLookup = fetch(`${new URL(form.dataset.endpoint).origin}/cdn-cgi/trace`, { signal: ctrl.signal })
+        .then((r) => (r.ok ? r.text() : ''))
+        .then((text) => { const m = text.match(/^loc=([A-Z]{2})$/m); return m && m[1] !== 'XX' ? m[1] : null; })
+        .catch(() => null)
+        .finally(() => clearTimeout(timer));
+      return countryLookup;
+    };
+
     const open = () => {
       clearTimeout(closing);
+      lookupCountry();
       if (!dialog.open) {
         if (!views.done.hidden) reset();
         dialog.showModal();
@@ -161,7 +177,7 @@
         const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify({ ...data, submittedAt: new Date().toISOString(), page: location.href }),
+          body: JSON.stringify({ ...data, country: await lookupCountry(), submittedAt: new Date().toISOString(), page: location.href }),
         });
         if (!res.ok) throw new Error(res.status);
         showDone(data, false);
