@@ -1,0 +1,7 @@
+# design tooling scratch files and screenshots
+.taste-skill/
+.playwright-mcp/
+
+# OS / editor
+.DS_Store
+*.log

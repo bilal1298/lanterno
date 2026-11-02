@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tallow Lane Coffee (concept by Lanterno Studio)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#123628; --deep:#0c271d; --ink:#f3ecdc; --soft:#bfc8b3; --pop:#efc94c; --line:#24503e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font:400 16px/1.55 "Bricolage Grotesque", system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  img { display:block; width:100%; }
+  .strip { background:var(--pop); color:var(--deep); font-weight:600; font-size:14px; text-align:center; padding:9px 16px; }
+  nav { display:flex; align-items:center; gap:36px; height:80px; padding:0 40px; }
+  .mark { font-weight:800; font-size:22px; letter-spacing:-0.03em; margin-right:auto; }
+  nav ul { display:flex; gap:30px; list-style:none; font-size:15px; color:var(--soft); }
+  .btn { display:inline-flex; background:var(--pop); color:var(--deep); font-weight:800; font-size:15px; padding:14px 22px; border-radius:6px; }
+  .hero { padding:12px 40px 0; }
+  h1 { font-weight:800; font-size:clamp(64px, 12.4vw, 210px); line-height:0.84; letter-spacing:-0.055em; text-transform:uppercase; }
+  .split { display:grid; grid-template-columns: 4fr 8fr; gap:40px; margin-top:40px; }
+  .split p { font-size:21px; color:var(--soft); max-width:28ch; }
+  .split p b { color:var(--ink); font-weight:600; }
+  .split .btn { margin-top:28px; }
+  .split .hours { margin-top:40px; font-size:15px; max-width:none; color:var(--soft); line-height:1.9; }
+  .split .hours b { color:var(--ink); font-weight:600; display:inline-block; width:92px; }
+  .photo { position:relative; }
+  .photo img { height:560px; object-fit:cover; border-radius:6px; }
+  .sticker { position:absolute; right:28px; top:-44px; width:132px; height:132px; border-radius:50%; background:var(--pop); color:var(--deep); display:grid; place-items:center; text-align:center; font-weight:800; font-size:15px; line-height:1.1; transform:rotate(-10deg); }
+  .menu { margin-top:110px; padding:110px 40px; display:grid; grid-template-columns: 6fr 5fr; gap:72px; background:var(--deep); }
+  h2 { font-weight:800; font-size:clamp(44px, 5vw, 76px); line-height:0.92; letter-spacing:-0.045em; text-transform:uppercase; margin-bottom:32px; }
+  .m { display:flex; justify-content:space-between; gap:20px; padding:18px 0; border-bottom:1px dashed var(--line); font-size:22px; font-weight:600; }
+  .m span { color:var(--pop); font-variant-numeric:tabular-nums; }
+  .m small { display:block; font-size:15px; color:var(--soft); font-weight:400; }
+  .note { margin-top:24px; color:var(--soft); }
+  .menu img { height:100%; min-height:520px; object-fit:cover; border-radius:6px; }
+  footer { padding:44px 40px; display:flex; justify-content:space-between; color:var(--soft); font-size:14px; background:var(--deep); }
+  @media (max-width: 760px) {
+    .strip { font-size:13px; }
+    nav { padding:0 18px; height:66px; } nav ul { display:none; } nav .btn { padding:11px 14px; font-size:14px; }
+    .hero { padding:8px 18px 0; } h1 { font-size:68px; }
+    .split { grid-template-columns:1fr; gap:36px; margin-top:24px; } .split p { font-size:18px; }
+    .photo img { height:300px; } .sticker { width:104px; height:104px; font-size:13px; right:14px; top:-36px; }
+    .menu { grid-template-columns:1fr; padding:72px 18px; gap:40px; margin-top:72px; }
+  }
+</style>
+</head>
+<body>
+  <p class="strip">Fresh roast out Tuesday: Ethiopia Guji, washed</p>
+  <nav>
+    <a class="mark" href="#">Tallow Lane Coffee</a>
+    <ul><li>Menu</li><li>Beans</li><li>Wholesale</li><li>Find us</li></ul>
+    <a class="btn" href="#">Order ahead</a>
+  </nav>
+  <section class="hero">
+    <h1>Roasted on<br>Tallow Lane</h1>
+    <div class="split">
+      <div>
+        <p><b>Small-batch coffee, roasted out the back every Tuesday.</b> Toast until the bread runs out.</p>
+        <a class="btn" href="#">Order ahead</a>
+        <p class="hours"><b>Weekdays</b>6:30am–3pm<br><b>Weekends</b>7:30am–2pm</p>
+      </div>
+      <div class="photo">
+        <img src="../img/coffee-pour.jpg" alt="A kettle pouring water over a pour-over coffee dripper">
+        <span class="sticker">Roasted<br>this<br>Tuesday</span>
+      </div>
+    </div>
+  </section>
+  <section class="menu">
+    <div>
+      <h2>On the board</h2>
+      <div class="m"><div>Filter of the week<small>Ethiopia Guji, washed</small></div><span>$5.50</span></div>
+      <div class="m"><div>Flat white<small>House blend or single origin</small></div><span>$5.00</span></div>
+      <div class="m"><div>Long black<small>Double shot, always</small></div><span>$4.50</span></div>
+      <div class="m"><div>Sourdough and butter<small>Thick cut, from the bakery next door</small></div><span>$7.00</span></div>
+      <div class="m"><div>Beans to take home<small>250g, ground or whole</small></div><span>$19.00</span></div>
+      <p class="note">Oat and soy milk at no extra charge.</p>
+    </div>
+    <img src="../img/coffee-cafe.jpg" alt="A coffee cup on a long wooden table inside a bright café">
+  </section>
+  <footer><span>Tallow Lane Coffee. Open daily.</span><span>A concept by Lanterno Studio</span></footer>
+</body>
+</html>

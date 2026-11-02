@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saltwater Physio (concept by Lanterno Studio)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f2f4f1; --panel:#e3ebe6; --card:#ffffff; --ink:#0f2c28; --soft:#4b6661; --sea:#1d6e62; --sand:#e9dcc5; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font:400 16px/1.6 Manrope, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  img { display:block; width:100%; }
+  nav { display:flex; align-items:center; gap:36px; height:84px; padding:0 40px; }
+  .mark { font-weight:800; font-size:20px; letter-spacing:-0.03em; margin-right:auto; display:flex; align-items:center; gap:10px; }
+  .mark i { width:22px; height:22px; border-radius:50%; background:var(--sea); box-shadow: inset -6px -6px 0 var(--sand); display:block; }
+  nav ul { display:flex; gap:30px; list-style:none; font-size:14px; font-weight:600; color:var(--soft); }
+  .btn { display:inline-flex; align-items:center; background:var(--sea); color:#fff; font-weight:700; font-size:14px; padding:14px 24px; border-radius:999px; }
+  .btn.light { background:var(--card); color:var(--ink); }
+  .hero { position:relative; margin:0 16px; height:calc(100vh - 100px); min-height:620px; border-radius:28px; overflow:hidden; }
+  .hero img { position:absolute; inset:0; height:100%; object-fit:cover; }
+  .card { position:absolute; left:24px; bottom:24px; background:var(--bg); padding:44px 48px; max-width:660px; border-radius:22px; }
+  h1 { font-weight:800; font-size:clamp(46px, 5.4vw, 86px); line-height:0.98; letter-spacing:-0.05em; }
+  .card p { margin-top:18px; color:var(--soft); font-size:18px; max-width:40ch; }
+  .card .row { display:flex; gap:20px; align-items:center; margin-top:28px; flex-wrap:wrap; }
+  .card .row span { font-weight:600; font-size:14px; color:var(--soft); }
+  .open { position:absolute; right:24px; top:24px; background:var(--card); border-radius:999px; padding:10px 18px; font-weight:700; font-size:13px; display:flex; gap:8px; align-items:center; }
+  .open i { width:8px; height:8px; border-radius:50%; background:#2fb37a; display:block; }
+  .trust { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; padding:16px; }
+  .trust div { background:var(--panel); border-radius:20px; padding:28px; }
+  .trust b { display:block; font-size:20px; letter-spacing:-0.02em; margin-bottom:4px; }
+  .trust span { color:var(--soft); }
+  .prices { padding:110px 40px; display:grid; grid-template-columns:4fr 8fr; gap:56px; }
+  h2 { font-weight:800; font-size:clamp(40px, 4vw, 60px); line-height:1; letter-spacing:-0.045em; }
+  .prices > div > p { margin-top:18px; color:var(--soft); max-width:30ch; }
+  .list { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .item { background:var(--card); padding:28px; border-radius:20px; display:flex; flex-direction:column; }
+  .item b { font-size:20px; letter-spacing:-0.02em; }
+  .item p { color:var(--soft); margin:6px 0 22px; flex:1; }
+  .item .f { display:flex; justify-content:space-between; align-items:center; }
+  .item span { font-weight:800; color:var(--sea); font-size:24px; letter-spacing:-0.02em; }
+  .item small { font-weight:600; color:var(--soft); font-size:13px; }
+  .band { margin:0 16px 16px; background:var(--sea); color:#fff; border-radius:28px; padding:72px 56px; display:flex; justify-content:space-between; align-items:end; gap:32px; }
+  .band h2 { max-width:14ch; }
+  footer { padding:40px; display:flex; justify-content:space-between; color:var(--soft); font-size:14px; }
+  @media (max-width: 760px) {
+    nav { padding:0 16px; height:68px; } nav ul { display:none; } nav .btn { padding:11px 16px; }
+    .hero { margin:0 10px; height:auto; min-height:0; display:flex; flex-direction:column; }
+    .hero img { position:relative; height:300px; }
+    .card { position:relative; left:auto; bottom:auto; border-radius:0; padding:28px 18px; }
+    h1 { font-size:44px; } .card p { font-size:16px; }
+    .open { top:14px; right:14px; }
+    .trust, .list { grid-template-columns:1fr; } .trust { padding:10px; }
+    .prices { grid-template-columns:1fr; padding:64px 16px; gap:32px; }
+    .band { flex-direction:column; align-items:flex-start; padding:48px 24px; margin:0 10px 10px; }
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <a class="mark" href="#"><i></i>Saltwater Physio</a>
+    <ul><li>Treatments</li><li>Clinical Pilates</li><li>Prices</li><li>The clinic</li></ul>
+    <a class="btn" href="#">Book online</a>
+  </nav>
+  <section class="hero">
+    <img src="../img/physio-beach.jpg" alt="A rock island reflected on a wet beach under a pale sky">
+    <p class="open"><i></i>Open today until 7pm</p>
+    <div class="card">
+      <h1>Move like yourself again.</h1>
+      <p>Hands-on physiotherapy and clinical Pilates, two streets from the beach. Same-week appointments, no referral needed.</p>
+      <div class="row"><a class="btn" href="#">Book an assessment</a><span>Mon–Sat, 7am–7pm</span></div>
+    </div>
+  </section>
+  <div class="trust">
+    <div><b>Rebates on the spot</b><span>Claim through every major health fund at the desk.</span></div>
+    <div><b>No referral needed</b><span>Book straight in, online or by phone.</span></div>
+    <div><b>Same-week appointments</b><span>Early mornings and Saturdays included.</span></div>
+  </div>
+  <section class="prices">
+    <div><h2>Prices, upfront.</h2><p>No membership, no packages you have to buy first. Pay as you go.</p></div>
+    <div class="list">
+      <div class="item"><b>Initial assessment</b><p>45 minutes, a diagnosis and a plan you can follow at home.</p><div class="f"><span>$95</span><small>45 min</small></div></div>
+      <div class="item"><b>Follow-up session</b><p>Treatment, progress checks and an updated plan.</p><div class="f"><span>$80</span><small>30 min</small></div></div>
+      <div class="item"><b>Clinical Pilates</b><p>Small classes on the reformer, four people at most.</p><div class="f"><span>$38</span><small>55 min</small></div></div>
+      <div class="item"><b>Sports injury review</b><p>For runners, swimmers and weekend footballers.</p><div class="f"><span>$110</span><small>60 min</small></div></div>
+    </div>
+  </section>
+  <section class="band"><h2>Sore today? We can probably see you this week.</h2><a class="btn light" href="#">Book online</a></section>
+  <footer><span>Saltwater Physio. Free parking behind the clinic.</span><span>A concept by Lanterno Studio</span></footer>
+</body>
+</html>

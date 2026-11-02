@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ridgeline Joinery (concept by Lanterno Studio)</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#16120e; --panel:#1f1914; --line:#342a21; --ink:#f1e8da; --soft:#b9ab96; --brass:#cfa96e; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font:400 16px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing:antialiased; }
+  a { color:inherit; text-decoration:none; }
+  img { display:block; width:100%; }
+  .serif { font-family:Fraunces, Georgia, serif; font-optical-sizing:auto; }
+  nav { display:flex; align-items:center; gap:40px; height:88px; padding:0 56px; }
+  .mark { font:500 21px/1 Fraunces, serif; letter-spacing:-0.01em; margin-right:auto; display:flex; gap:10px; align-items:center; }
+  .mark i { width:10px; height:10px; background:var(--brass); transform:rotate(45deg); display:block; }
+  nav ul { display:flex; gap:34px; list-style:none; font-size:14px; color:var(--soft); }
+  .btn { display:inline-flex; align-items:center; gap:10px; background:var(--brass); color:#16120e; font-weight:600; font-size:14px; padding:14px 22px; border-radius:2px; }
+  .btn.ghost { background:none; color:var(--ink); box-shadow:inset 0 0 0 1px var(--line); }
+  .hero { display:grid; grid-template-columns: 1.05fr 1fr; gap:56px; padding:40px 56px 72px; align-items:end; }
+  .hero h1 { font-weight:400; font-size:clamp(54px, 6.6vw, 112px); line-height:0.96; letter-spacing:-0.035em; }
+  .hero h1 em { font-style:italic; color:var(--brass); }
+  .hero p { margin-top:30px; max-width:40ch; color:var(--soft); font-size:18px; }
+  .row { display:flex; flex-wrap:wrap; gap:14px; margin-top:36px; }
+  .hero-img { position:relative; height:min(74vh, 720px); }
+  .hero-img img { height:100%; object-fit:cover; border-radius:2px; }
+  .tag { position:absolute; left:-28px; bottom:32px; background:var(--ink); color:#16120e; padding:18px 22px; font-size:13px; line-height:1.4; max-width:230px; }
+  .tag b { font:500 26px/1 Fraunces, serif; display:block; margin-bottom:6px; letter-spacing:-0.02em; }
+  .facts { display:grid; grid-template-columns:repeat(4, 1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin:0 56px; }
+  .facts div { padding:28px 0; }
+  .facts div + div { padding-left:28px; border-left:1px solid var(--line); }
+  .facts b { display:block; font:400 34px/1 Fraunces, serif; letter-spacing:-0.02em; margin-bottom:8px; }
+  .facts span { color:var(--soft); font-size:14px; }
+  .services { display:grid; grid-template-columns: 1fr 1.15fr; gap:72px; padding:120px 56px; }
+  .services h2 { font-weight:400; font-size:clamp(40px, 4.2vw, 64px); line-height:1; letter-spacing:-0.03em; margin-bottom:24px; }
+  .services .intro p { color:var(--soft); max-width:36ch; margin-bottom:36px; }
+  .services .intro img { height:420px; object-fit:cover; border-radius:2px; }
+  .svc { display:grid; grid-template-columns: 56px 1fr auto; gap:4px 20px; padding:28px 0; border-top:1px solid var(--line); }
+  .svc:last-child { border-bottom:1px solid var(--line); }
+  .svc .n { font:italic 400 18px/1.4 Fraunces, serif; color:var(--brass); }
+  .svc b { font:400 28px/1.15 Fraunces, serif; letter-spacing:-0.02em; }
+  .svc .p { color:var(--brass); font-weight:500; font-size:15px; padding-top:6px; white-space:nowrap; }
+  .svc p { grid-column:2 / 4; color:var(--soft); max-width:46ch; }
+  .quote { background:var(--panel); padding:110px 56px; display:grid; grid-template-columns: 1fr 2fr; gap:56px; }
+  .quote blockquote { font:400 clamp(28px, 3vw, 44px)/1.2 Fraunces, serif; letter-spacing:-0.02em; }
+  .quote cite { display:block; margin-top:24px; font:normal 500 14px Inter, sans-serif; color:var(--soft); }
+  .quote .k { color:var(--soft); font-size:14px; }
+  footer { padding:64px 56px; display:flex; justify-content:space-between; color:var(--soft); font-size:14px; }
+  @media (max-width: 760px) {
+    nav { padding:0 20px; height:72px; } nav ul { display:none; } nav .btn { padding:11px 14px; white-space:nowrap; font-size:13px; } .mark { font-size:18px; }
+    .hero { grid-template-columns:1fr; padding:16px 20px 48px; gap:32px; }
+    .hero h1 { font-size:52px; } .hero p { font-size:16px; margin-top:20px; }
+    .hero-img { height:340px; order:2; } .tag { left:12px; bottom:12px; }
+    .facts { grid-template-columns:1fr 1fr; margin:0 20px; } .facts div:nth-child(3) { padding-left:0; border-left:0; }
+    .services, .quote { grid-template-columns:1fr; padding:72px 20px; gap:40px; }
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <a class="mark" href="#"><i></i>Ridgeline Joinery</a>
+    <ul><li>Kitchens</li><li>Wardrobes</li><li>Furniture</li><li>The workshop</li></ul>
+    <a class="btn" href="#">Book a measure-up</a>
+  </nav>
+  <section class="hero">
+    <div>
+      <h1 class="serif">Built to outlast <em>the house.</em></h1>
+      <p>Kitchens, wardrobes and one-off furniture, made by hand in our workshop and fitted by the same two people who built them.</p>
+      <div class="row"><a class="btn" href="#">Book a free measure-up</a><a class="btn ghost" href="#">See recent kitchens</a></div>
+    </div>
+    <div class="hero-img">
+      <img src="../img/joinery-tools.jpg" alt="Hand tools and leather gloves laid out on a dark timber bench">
+      <p class="tag"><b>6–8 weeks</b>from first sketch to the last hinge, for most kitchens.</p>
+    </div>
+  </section>
+  <div class="facts">
+    <div><b>Two</b><span>makers, start to finish</span></div>
+    <div><b>Solid</b><span>Tasmanian oak and blackbutt</span></div>
+    <div><b>10-year</b><span>guarantee on every joint</span></div>
+    <div><b>Free</b><span>measure-up and drawings</span></div>
+  </div>
+  <section class="services">
+    <div class="intro">
+      <h2 class="serif">What we make</h2>
+      <p>Everything is drawn for your room, cut in our workshop and fitted by us. No flat-packs, no subcontractors.</p>
+      <img src="../img/joinery-table.jpg" alt="A timber dining table and chairs by tall windows">
+    </div>
+    <div>
+      <div class="svc"><span class="n">i.</span><b>Kitchens</b><span class="p">From $18,000</span><p>Solid timber and two-pack, designed around how you actually cook.</p></div>
+      <div class="svc"><span class="n">ii.</span><b>Built-in wardrobes</b><span class="p">From $4,500</span><p>Floor to ceiling, with the drawers where your hands expect them.</p></div>
+      <div class="svc"><span class="n">iii.</span><b>Custom furniture</b><span class="p">Quoted per piece</span><p>Dining tables, desks and shelving that will be handed down.</p></div>
+      <div class="svc"><span class="n">iv.</span><b>Repairs and refits</b><span class="p">From $350</span><p>New doors, new benchtops, old cabinets made right again.</p></div>
+    </div>
+  </section>
+  <section class="quote">
+    <p class="k">From the workshop</p>
+    <div><blockquote class="serif">“We’d rather make one kitchen properly than three quickly. That’s why there’s a waiting list, and why nobody on it has complained.”</blockquote><cite>Sam Hollis, head joiner</cite></div>
+  </section>
+  <footer><span>Ridgeline Joinery. Workshop visits by appointment.</span><span>A concept by Lanterno Studio</span></footer>
+</body>
+</html>
