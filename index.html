@@ -273,8 +273,8 @@
   </div>
 </footer>
 
-<!-- Contact form. Set data-endpoint to a form service URL (Formspree, Web3Forms, Netlify, or your own API).
-     With no endpoint, sending opens the visitor's email app with the message already written. -->
+<!-- Contact form. Submissions are POSTed as JSON to the n8n webhook in data-endpoint.
+     If data-endpoint is emptied, sending falls back to opening the visitor's email app with the message written. -->
 <dialog class="contact" id="contact" aria-labelledby="contact-title" aria-describedby="contact-intro">
   <div class="contact-panel">
     <button class="contact-close" type="button" data-close aria-label="Close"><svg aria-hidden="true"><use href="#close"/></svg></button>
@@ -283,7 +283,7 @@
       <h2 class="display contact-title" id="contact-title">Let’s get your<br>website sorted.</h2>
       <p class="contact-intro" id="contact-intro">Tell us what you’re working with. No pressure, no sales marathon, just a straight reply.</p>
 
-      <form class="contact-form" data-endpoint="" novalidate>
+      <form class="contact-form" data-endpoint="https://n8n.pracxcel.com.au/webhook/lanterno-contact-form" novalidate>
         <div class="field-row">
           <div class="field">
             <label for="cf-first">First name</label>

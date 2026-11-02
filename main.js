@@ -161,7 +161,7 @@
         const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(data),
+          body: JSON.stringify({ ...data, submittedAt: new Date().toISOString(), page: location.href }),
         });
         if (!res.ok) throw new Error(res.status);
         showDone(data, false);
