@@ -108,7 +108,7 @@
       lastName: (v) => (v ? '' : 'Please add your last name.'),
       email: (v) => (!v ? 'Please add your email so we can reply.' : /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'That email doesn’t look quite right.'),
       website: (v) => (!v || /^(https?:\/\/)?[^\s.]+\.[^\s]{2,}$/i.test(v) ? '' : 'That doesn’t look like a web address. Leave it blank if you don’t have one.'),
-      message: (v) => (v.length >= 10 ? '' : v ? 'A little more detail would help us reply properly.' : 'Tell us a little about your business.'),
+      message: () => '',
     };
     const check = (input) => {
       const msg = rules[input.name](input.value.trim());
@@ -149,7 +149,7 @@
       const endpoint = form.dataset.endpoint;
 
       if (!endpoint) {
-        const body = `${data.message}\n\n${data.firstName} ${data.lastName}\n${data.email}${data.website ? `\n${data.website}` : ''}`;
+        const body = `${data.message ? `${data.message}\n\n` : ''}${data.firstName} ${data.lastName}\n${data.email}${data.website ? `\n${data.website}` : ''}`;
         location.href = `mailto:hello@lanternostudio.com?subject=${encodeURIComponent(`Website enquiry from ${data.firstName} ${data.lastName}`)}&body=${encodeURIComponent(body)}`;
         showDone(data, true);
         return;
