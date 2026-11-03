@@ -5,3 +5,6 @@
 # OS / editor
 .DS_Store
 *.log
+
+# email templates stay local; only their hosted assets (e.g. the logo) are committed
+email/*.html
