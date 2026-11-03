@@ -38,17 +38,6 @@
   }
   document.querySelectorAll('.included-list li').forEach((li, i) => { li.style.transitionDelay = `${i * 45}ms`; });
 
-  /* Hovering a browser mock scrolls the whole site inside it */
-  const views = document.querySelectorAll('.browser-view');
-  const measure = () => views.forEach((view) => {
-    const img = view.querySelector('img');
-    const travel = Math.max(0, img.offsetHeight - view.offsetHeight);
-    view.closest('.mock').style.setProperty('--scroll-to', `-${travel}px`);
-  });
-  addEventListener('load', measure);
-  addEventListener('resize', measure);
-  views.forEach((v) => v.querySelector('img').addEventListener('load', measure));
-
   /* Contact popup: every "get in touch" opens it; the mailto stays as the no-script fallback */
   const dialog = document.getElementById('contact');
   if (dialog && typeof dialog.showModal === 'function') {
