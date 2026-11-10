@@ -170,6 +170,9 @@
         });
         if (!res.ok) throw new Error(res.status);
         showDone(data, false);
+        // Conversion signal for GA4 via Tag Manager; no personal details included
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'generate_lead', form_name: 'contact', lead_country: await lookupCountry() });
       } catch {
         status.textContent = 'That didn’t send. Please try again, or email hello@lanternostudio.com.';
       } finally {

@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Consent Mode v2 defaults: must run before Google Tag Manager -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // UK, EEA and Switzerland: analytics off until the visitor accepts
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'] });
+  // Everywhere else: analytics on, advertising always off
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+  (function () {
+    var choice = null;
+    try { choice = localStorage.getItem('lanterno-consent'); } catch (e) {}
+    if (!choice && navigator.globalPrivacyControl) choice = 'denied';
+    if (choice === 'granted' || choice === 'denied') gtag('consent', 'update', { analytics_storage: choice });
+  })();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -55,7 +71,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap legal-grid">
     <div class="legal-head">
       <h1 class="display">Privacy Policy</h1>
-      <p class="legal-meta">Effective 3 November 2026</p>
+      <p class="legal-meta">Effective 10 November 2026</p>
       <nav class="legal-toc" aria-label="On this page">
         <p>On this page</p>
         <ol>
@@ -69,7 +85,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><a href="#retention">How long we keep it</a></li>
           <li><a href="#security">Security</a></li>
           <li><a href="#rights">Your rights</a></li>
-          <li><a href="#cookies">Cookies and tracking</a></li>
+          <li><a href="#cookies">Cookies and analytics</a></li>
           <li><a href="#clients">If you are a client</a></li>
           <li><a href="#other">Other things you should know</a></li>
           <li><a href="#complaints">Questions and complaints</a></li>
@@ -92,7 +108,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2>2. The short version</h2>
         <ul class="legal-points">
           <li>We collect only what we need to reply to you, prepare and send relevant business proposals, and deliver the work you engage us for.</li>
-          <li>The Site does not use cookies, analytics, advertising pixels or third-party trackers.</li>
+          <li>We use Google Analytics and Microsoft Clarity to understand how people use the Site. If you are in the UK, the European Economic Area or Switzerland, they only run if you accept them. Wherever you are, you can turn them off at any time using “Cookie settings” at the bottom of any page.</li>
+          <li>We do not use advertising cookies.</li>
           <li>When you send our contact form, we also record the country your connection comes from, as a two-letter code. We do not record your precise location.</li>
           <li>We do not sell personal information, and we do not share it for targeted advertising.</li>
           <li>You can ask to see, correct or delete your information, or stop hearing from us, at any time.</li>
@@ -120,6 +137,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>3.4 Information collected automatically</h3>
         <p><strong>Country of your connection.</strong> When you open the contact form, your browser makes a request to the domain that receives our form submissions. That domain is served through Cloudflare, which returns the country associated with your IP address as a two-letter code (for example “AU”). We include that code with your submission so we know which market you are in. Your IP address is processed by Cloudflare to do this, but we do not store your IP address with your submission, and we do not determine your precise location.</p>
         <p><strong>Server logs.</strong> Like most websites, the services that host the Site and receive form submissions automatically log technical information when you visit or submit a form, such as your IP address, browser type, the pages requested and the date and time. These logs are used to deliver the Site, keep it secure and fix faults.</p>
+        <p><strong>Analytics.</strong> When analytics are switched on (see section 11), Google Analytics and Microsoft Clarity collect information about how you use the Site, such as the pages you view, how you arrived, how long you stay, your device and browser type, your approximate location (country and city, worked out from your IP address), and how you interact with pages, including clicks, scrolling and mouse movement. Microsoft Clarity also creates recordings and heatmaps of how pages are used. Text you type into forms is masked so that it is not captured in recordings. Google Analytics does not log or store IP addresses. We use this information to understand and improve the Site, generally in aggregate, and we do not use it to identify you.</p>
 
         <h3>3.5 Information from public sources</h3>
         <p>To prepare homepage previews and contact businesses that may benefit from a new website, we collect business information that has been made publicly available, such as a business’s name, website address and content, publicly listed business email address and phone number, and the names and roles of people publicly listed as contacts for that business. Section 5 explains how we use it.</p>
@@ -142,6 +160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <tr><td>Preparing homepage previews and contacting businesses about our services (section 5)</td><td>Our legitimate interest in promoting our services to businesses, balanced against your rights and your ability to opt out at any time</td></tr>
               <tr><td>Providing the services you engage us for, including design, build, launch and support</td><td>Performance of our contract with you</td></tr>
               <tr><td>Invoicing, payments, accounting and record keeping</td><td>Compliance with our legal obligations; performance of our contract with you</td></tr>
+              <tr><td>Measuring and improving how the Site is used, through Google Analytics and Microsoft Clarity</td><td>Your consent, where the law requires it (including in the UK, the European Economic Area and Switzerland); otherwise our legitimate interest in understanding and improving the Site. You can withdraw consent or object at any time using “Cookie settings”</td></tr>
               <tr><td>Understanding which countries our enquiries come from</td><td>Our legitimate interest in understanding and planning for our markets</td></tr>
               <tr><td>Keeping the Site and our systems secure, preventing spam and abuse, and fixing faults</td><td>Our legitimate interest in operating a secure and reliable service</td></tr>
               <tr><td>Establishing, exercising or defending legal claims, and complying with lawful requests</td><td>Compliance with our legal obligations; our legitimate interest in protecting our rights</td></tr>
@@ -170,6 +189,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p>We do not sell, rent or trade personal information. We disclose it only to the following kinds of recipients, and only as much as they need:</p>
         <ul>
           <li><strong>Service providers who help us run our business</strong>, including our website hosting provider (Vercel), our network and security provider (Cloudflare), the infrastructure that runs our workflow automation system (which receives contact form submissions), our email and file storage providers, and our payment and banking providers. They may use the information only to provide their services to us.</li>
+          <li><strong>Analytics providers</strong>: Google (Google Analytics) and Microsoft (Microsoft Clarity), when analytics are switched on. They process this information to provide their analytics services to us, and may also use some of it for their own purposes as described in the <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a> and the <a href="https://privacy.microsoft.com/privacystatement" rel="noopener">Microsoft Privacy Statement</a>. We have switched off the advertising features of Google Analytics.</li>
           <li><strong>Providers involved in delivering your project</strong>, such as your domain registrar or hosting provider, when we act on your instructions.</li>
           <li><strong>Professional advisers</strong>, such as accountants, lawyers and insurers, under a duty of confidentiality.</li>
           <li><strong>Authorities and others where the law requires or permits it</strong>, such as to comply with a court order or to protect someone’s safety.</li>
@@ -193,6 +213,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li><strong>Client records</strong>: for the length of the engagement and then for up to seven years, so we can meet our tax, accounting and legal obligations.</li>
           <li><strong>Access details for your accounts</strong>: only until the work that needs them is finished. See section 12.</li>
           <li><strong>Server logs</strong>: for the limited periods set by our hosting and network providers.</li>
+          <li><strong>Analytics data</strong>: Google Analytics keeps event data for up to 14 months. Microsoft Clarity keeps session recordings for 30 days, unless we save a particular recording, and keeps heatmaps and other aggregated data for up to 13 months.</li>
         </ul>
         <p>When we no longer need personal information, we delete it or permanently de-identify it.</p>
       </section>
@@ -220,7 +241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>object to processing based on our legitimate interests, and to object at any time, without needing a reason, to the use of your information for direct marketing;</li>
           <li>ask us to restrict how we use your information;</li>
           <li>receive information you gave us in a structured, commonly used and machine-readable format, and have it sent to another organisation where technically feasible;</li>
-          <li>withdraw consent at any time, where we rely on consent, without affecting processing that took place before you withdrew it; and</li>
+          <li>withdraw consent at any time, where we rely on consent, without affecting processing that took place before you withdrew it. For analytics, use “Cookie settings” at the bottom of any page; and</li>
           <li>complain to a data protection supervisory authority (see section 14).</li>
         </ul>
 
@@ -232,10 +253,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </section>
 
       <section id="cookies">
-        <h2>11. Cookies and tracking</h2>
-        <p>The Site does not use cookies, web beacons, analytics tools, advertising pixels or similar tracking technologies, and it does not store information in your browser. Our typefaces are served from our own website, so viewing the Site does not send your information to font providers.</p>
-        <p>Because we do not track you across websites, we do not need to respond to “Do Not Track” signals. If you send a Global Privacy Control signal, we will treat it as a request to opt out of any sale or sharing of your personal information, which we do not carry out in any case.</p>
-        <p>If we introduce cookies or analytics in the future, we will update this policy first and ask for your consent where the law requires it.</p>
+        <h2>11. Cookies and analytics</h2>
+        <p>Cookies are small files that a website stores on your device. We use them only for analytics, to understand how people use the Site so that we can improve it. We do not use advertising cookies, and the Site does not use advertising pixels.</p>
+
+        <h3>11.1 Your choice</h3>
+        <p>When you first visit the Site, we ask whether you accept analytics cookies.</p>
+        <ul>
+          <li><strong>In the UK, the European Economic Area and Switzerland</strong>, analytics cookies are set only after you click “Accept”.</li>
+          <li><strong>Everywhere else</strong>, analytics are switched on by default, and you can switch them off by clicking “Reject”.</li>
+          <li><strong>Wherever you are</strong>, you can change your choice at any time using “Cookie settings” at the bottom of any page. If you reject analytics, we delete the analytics cookies the Site has set.</li>
+        </ul>
+        <p>If your browser sends a Global Privacy Control signal, we treat it as a refusal and keep analytics switched off unless you choose to accept them. Because there is no common standard for “Do Not Track” signals, we do not respond to them, but you can make the same choice using “Cookie settings”.</p>
+
+        <h3>11.2 What we use</h3>
+        <div class="legal-table legal-table-cookies" role="region" aria-label="Cookies used on the Site" tabindex="0">
+          <table>
+            <thead><tr><th scope="col">Name</th><th scope="col">Provider and purpose</th><th scope="col">Expires</th></tr></thead>
+            <tbody>
+              <tr><td>_ga</td><td>Google Analytics. Distinguishes one visitor from another.</td><td>2 years</td></tr>
+              <tr><td>_ga_&lt;ID&gt;</td><td>Google Analytics. Keeps track of your current visit.</td><td>2 years</td></tr>
+              <tr><td>_clck</td><td>Microsoft Clarity. Remembers a Clarity visitor ID and settings across visits.</td><td>1 year</td></tr>
+              <tr><td>_clsk</td><td>Microsoft Clarity. Connects the pages you view into a single visit.</td><td>1 day</td></tr>
+              <tr><td>MUID, CLID, ANONCHK, MR, SM</td><td>Microsoft, on its own domains. Used to operate Microsoft Clarity.</td><td>Up to 1 year</td></tr>
+              <tr><td>lanterno-consent</td><td>Lanterno, stored in your browser rather than as a cookie. Remembers your cookie choice so we do not ask again.</td><td>Until you clear it</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The analytics cookies are loaded through Google Tag Manager, which itself does not set cookies. Our typefaces are served from our own website, so viewing the Site does not send your information to font providers.</p>
+        <p>You can also block or delete cookies in your browser settings. If we change the tools we use, we will update this section.</p>
       </section>
 
       <section id="clients">
@@ -274,8 +319,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="legal-footer">
   <div class="wrap legal-footer-inner">
     <p class="brand"><svg aria-hidden="true"><use href="#mark"/></svg><span>Lanterno Studio</span></p>
+    <button type="button" class="text-link link-button" data-cookie-settings>Cookie settings</button>
     <p>© 2026 Lanterno Studio</p>
   </div>
 </footer>
+<script src="/consent.js" defer></script>
 </body>
 </html>

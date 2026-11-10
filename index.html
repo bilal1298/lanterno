@@ -2,6 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Consent Mode v2 defaults: must run before Google Tag Manager -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // UK, EEA and Switzerland: analytics off until the visitor accepts
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'] });
+  // Everywhere else: analytics on, advertising always off
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+  (function () {
+    var choice = null;
+    try { choice = localStorage.getItem('lanterno-consent'); } catch (e) {}
+    if (!choice && navigator.globalPrivacyControl) choice = 'denied';
+    if (choice === 'granted' || choice === 'denied') gtag('consent', 'update', { analytics_storage: choice });
+  })();
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -342,6 +358,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer-meta">
       <p class="brand"><svg aria-hidden="true"><use href="#mark"/></svg><span>Lanterno Studio</span><span class="motto">Out of the dark.</span></p>
       <a class="text-link" href="/privacy/">Privacy Policy</a>
+      <button type="button" class="text-link link-button" data-cookie-settings>Cookie settings</button>
       <p>© 2026 Lanterno Studio</p>
       <a class="text-link" href="#top">Back to top</a>
     </div>
@@ -407,5 +424,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </dialog>
 
 <script src="/main.js" defer></script>
+<script src="/consent.js" defer></script>
 </body>
 </html>
