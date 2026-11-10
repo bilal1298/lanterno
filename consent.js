@@ -49,7 +49,7 @@
     banner.setAttribute('aria-label', 'Cookie choices');
     banner.hidden = true;
     banner.innerHTML =
-      '<p class="consent-text">We use analytics cookies from Google Analytics and Microsoft Clarity to see how people use this site, so we can make it better. No advertising cookies. <a href="/privacy/#cookies">Learn more</a></p>' +
+      '<p class="consent-text">We use cookies to analyse site traffic and improve your experience. <a href="/privacy/#cookies">Learn more</a></p>' +
       '<div class="consent-actions">' +
         '<button type="button" class="consent-btn consent-reject" data-choice="denied">Reject</button>' +
         '<button type="button" class="consent-btn consent-accept" data-choice="granted">Accept</button>' +
