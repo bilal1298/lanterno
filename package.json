@@ -2,6 +2,7 @@
   "name": "lanterno-studio",
   "private": true,
   "scripts": {
-    "dev": "python3 -m http.server 4321"
+    "dev": "python3 -m http.server 4321",
+    "stamp": "node scripts/stamp-assets.mjs"
   }
 }
